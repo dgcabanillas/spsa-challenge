@@ -66,8 +66,8 @@ export const estimateDeathDate = ( age ) => {
 
 export const seconds2datestring = ( seconds ) => {
     const date = new Date(seconds * 1000);
-    const dd = date.getDate();
-    const mm = date.getMonth() < 10 ? "0" + date.getMonth() : date.getMonth();
+    const dd = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+    const mm = date.getMonth() < 9 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1);
     const yy = date.getFullYear();
     return `${dd}-${mm}-${yy}`;
 }
